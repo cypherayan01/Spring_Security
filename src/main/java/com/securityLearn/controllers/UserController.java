@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.securityLearn.models.User;
+import com.securityLearn.models.Userd;
 import com.securityLearn.services.UserService;
 
 @RestController
@@ -20,19 +20,26 @@ public class UserController {
 	@Autowired
 	private UserService userservice;
 	
+	
+	@GetMapping("/welcome")
+	public String welcome() {
+		String text="This is a private page";
+		return text;
+	}
+	
 	@GetMapping("/")
-	public List<User> getAllUsers(){
+	public List<Userd> getAllUsers(){
 		return this.userservice.getAllUsers();
 	}
 	
 	@GetMapping("/{username}")
-	public User getUser(@PathVariable("username") String username) {
+	public Userd getUser(@PathVariable("username") String username) {
 		return this.userservice.getUser(username);
 	}
 	
 	
 	@PostMapping("/")
-	public User add(@RequestBody User user) {
+	public Userd add(@RequestBody Userd user) {
 		return this.userservice.addUser(user);
 	}
 

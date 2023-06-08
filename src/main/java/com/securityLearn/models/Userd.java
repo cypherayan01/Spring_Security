@@ -2,7 +2,7 @@ package com.securityLearn.models;
 
 
 
-public class User {
+public class Userd {
 	String username;
 	String email;
 	String password;
@@ -30,15 +30,19 @@ public class User {
 		this.password = password;
 	}
 
-	public User(String username, String email, String password) {
+	public Userd(String username, String email, String password) {
 		super();
 		this.username = username;
 		this.email = email;
 		this.password = password;
 	}
 
-	public User() {
+	public Userd() {
 		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Userd(String username2, String email2, Object password2) {
 		// TODO Auto-generated constructor stub
 	}
 	
